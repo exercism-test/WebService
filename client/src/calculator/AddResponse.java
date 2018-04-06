@@ -9,42 +9,44 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * <p>Java class for addResponse complex type.
- *
+ * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- *
+ * 
  * <pre>
  * &lt;complexType name="addResponse">
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="return" type="{http://www.w3.org/2001/XMLSchema}int"/>
+ *         &lt;element name="return" type="{http://www.w3.org/2001/XMLSchema}double"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
  * &lt;/complexType>
  * </pre>
+ *
+ *
  */
 @XmlAccessorType (XmlAccessType.FIELD)
 @XmlType (name = "addResponse", propOrder = {
-		"_return"
+        "_return"
 })
 public class AddResponse {
 
-	@XmlElement (name = "return")
-	protected int _return;
+    @XmlElement (name = "return")
+    protected double _return;
 
-	/**
-	 * Gets the value of the return property.
-	 */
-	public int getReturn () {
-		return _return;
-	}
+    /**
+     * Gets the value of the return property.
+     */
+    public double getReturn () {
+        return _return;
+    }
 
-	/**
-	 * Sets the value of the return property.
-	 */
-	public void setReturn (int value) {
-		this._return = value;
-	}
+    /**
+     * Sets the value of the return property.
+     */
+    public void setReturn (double value) {
+        this._return = value;
+    }
 
 }

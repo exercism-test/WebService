@@ -6,22 +6,22 @@ import javax.jws.WebService;
 @WebService
 public class Calculator {
 	@WebMethod
-	public int add (int a, int b) {
+	public double add (double a, double b) {
 		return a + b;
 	}
 
 	@WebMethod
-	public int sub (int a, int b) {
+	public double sub (double a, double b) {
 		return a - b;
 	}
 
 	@WebMethod
-	public int mul (int a, int b) {
+	public double mul (double a, double b) {
 		return a * b;
 	}
 
 	@WebMethod
-	public int div (int a, int b) {
+	public double div (double a, double b) {
 		return a / b;
 	}
 }
