@@ -49,11 +49,10 @@ public class URLShortener {
 			return Response.status(Status.BAD_REQUEST).build();
 		}
 
-		if (urls.containsKey(id)) {
-			urls.put(id, result);
-			return Response.ok().build();
-		} else {
+		if (urls.replace(id, result) == null) {
 			return Response.status(Status.NOT_FOUND).build();
+		} else {
+			return Response.ok().build();
 		}
 	}
 
