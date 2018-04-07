@@ -86,7 +86,7 @@ public class URLShortener {
 		currentID = idGenerator.next(currentID);
 
 		urls.put(id, toAdd);
-		return Response.ok(id).build();
+		return Response.status(Status.CREATED).entity(id).build();
 	}
 
 	@DELETE
