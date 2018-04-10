@@ -1,6 +1,13 @@
 # How to run #
 
 ## How to start the servers ##
+The servers requires you to have [glassfish](https://javaee.github.io/glassfish/download) installed.
+
+Once glassfish has been downloaded and extracted you can naviagte to the directory of it and start the glassfish domain by typing
+```./bin/asadmin start-domain```
+
+You will now find the glassfish interface at `localhost:4848`. Once you have navigated to this interface, go to Applications > Deploy and choose the `.war` file we provided. Select `/` as root, and press deploy.
+
 Both servers come packaged in the same `.war` file.
 This file can be deployed on a GlassFish Server serving to port 8080.
 The context root should be set to `/`.
@@ -9,7 +16,7 @@ The context root should be set to `/`.
 ## How to access the Calculator service ##
 The Calculator service can be accessed via `http://127.0.0.1:8080/services/Calculator` via any SOAP/WSDL client.
 
-We have provided a sample client packaged in a jar that calls upon this server to perform some simple calculations.
+We have provided a sample example client packaged in a jar that calls upon this server to perform some simple calculations.
 This client can be run as `java -jar calculator_client.jar`.
 It will connect to the address specified above (hard-coded) to perform the calculation.
 
@@ -17,6 +24,7 @@ It will connect to the address specified above (hard-coded) to perform the calcu
 The URL shortener service can be accessed at `http://127.0.0.1:8080/rest/url` via any rest/web client.
 The service provides all methods as required by the assignment document. 
 
+From here the user can send HTTP requests to the URL given above in order to test the service. 
 
 # Design of the URL shortener #
 The URL shortener consists of two main parts, an id generator, and the main service class that handles the requests.
