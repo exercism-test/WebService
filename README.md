@@ -3,15 +3,14 @@
 ## How to start the servers ##
 The servers requires you to have [glassfish](https://javaee.github.io/glassfish/download) installed.
 
-Once glassfish has been downloaded and extracted you can naviagte to the directory of it and start the glassfish domain by typing
+Once glassfish has been downloaded and extracted you can navigate to the directory of it and start the default glassfish domain by typing
 ```./bin/asadmin start-domain```
 
-You will now find the glassfish interface at `localhost:4848`. Once you have navigated to this interface, go to Applications > Deploy and choose the `.war` file we provided. Select `/` as root, and press deploy.
+You will now find the glassfish admin interface at `localhost:4848`. Once you have navigated to this interface, go to Applications > Deploy and choose the `.war` file we provided. Select `/` as content root, and press deploy
+(It can also be deployed to different paths on the server / different ports, but the calculator client won't know how to contact the server).
+Both servers come packaged in the same `.war` file and should no be available via port 8080.
 
-Both servers come packaged in the same `.war` file.
-This file can be deployed on a GlassFish Server serving to port 8080.
-The context root should be set to `/`.
-(It can also be deployed to different paths on the server / different ports, but the calculator client won't know how to contact the server)
+
 
 ## How to access the Calculator service ##
 The Calculator service can be accessed via `http://127.0.0.1:8080/services/Calculator` via any SOAP/WSDL client.
