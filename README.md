@@ -2,7 +2,8 @@
 
 ## How to start the servers ##
 Both servers come packaged in the same `.war` file.
-This file can be deployed to the root of a GlassFish Server running on port 8080.
+This file can be deployed on a GlassFish Server serving to port 8080.
+The context root should be set to `/`.
 (It can also be deployed to different paths on the server / different ports, but the calculator client won't know how to contact the server)
 
 ## How to access the Calculator service ##
