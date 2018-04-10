@@ -33,7 +33,10 @@ It is marked as a `Singleton`, so the object gets instantiated once and then reu
 This allows us to store the urls within this object without the need for a separate database.
 
 The (id, URL) pairs are stored in a HashMap.
-The hashmap offers O(1) lookups, and handles deletions faily well.
+The hashmap offers O(1) lookups, and handles deletions fairly well.
  
 We do not reuse keys that have been deleted previously.
-We do this because we prefer people seeing an error page to them getting sent to the wrong page. 
+We do this because we prefer people seeing an error page to them getting sent to the wrong page.
+
+Note that we do not deduplicate shortened URLs (give the same ID for multiple requests with the same URL).
+If we would combine every request for the same URL on the same ID we can no longer guarantee that when a DELETE request is performed on a certain ID, that the given ID no longer links to the URL, because there might be other requests for that same URL that have not been deleted yet.  
